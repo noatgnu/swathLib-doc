@@ -6,36 +6,39 @@ SWATHLib \\
 \large Technical Manual and Common Usage}
 \author{Toan K. Phung}
 \begin{document}
-
-\maketitle
-\tableofcontents
 \frontmatter
-\section{Introduction}
+\maketitle
+\clearpage
+\tableofcontents
+\mainmatter
+\chapter{Introduction}
+
 SWATHLib is an attempt at creating an automated workflow for creation of manually curated spectral library for SWATH downstream analysis. The program itself is composed of two main component, the front-end created using TypeScript with Electron and the Angular framework and the back-end created using Python with Tornado as the server implementation.
-\subsection{GUI System Requirement}
-\subsubsection{Windows}
+\section{GUI System Requirement}
+\subsection{Windows}
 
 \begin{itemize}
-\item Intel Pentium 4 processor or later with SSE2.
-\item 512 MB of RAM
+	\item Intel Pentium 4 processor or later with SSE2.
+	\item 512 MB of RAM
 \end{itemize}
-\subsubsection{Mac}
+\subsection{Mac}
 \begin{itemize}
-    \item 64-bit Intel processor.
-    \item 512 MB of RAM
+	\item 64-bit Intel processor.
+	\item 512 MB of RAM
 \end{itemize}
-\subsubsection{Linux}    
+\subsection{Linux}
 \begin{itemize}
-    \item Intel Pentium 4 processor or later with SSE2.
-    \end{itemize}
-\subsection{Back-end System Requirement}
+	\item Intel Pentium 4 processor or later with SSE2.
+\end{itemize}
+\section{Back-end System Requirement}
 \begin{itemize}
-    \item Python 3.5+ with Tornado v5+ and Pyteomics v3.5.1+ packages.
+	\item Python 3.5+ with Tornado v5+ and Pyteomics v3.5.1+ packages.
 \end{itemize}
 \clearpage
-\section{GUI}
+\chapter{Graphical User Interface}
 The GUI at its core is a chromium web instant. At the top right is a button that can be used to access the back-end connection management windows where the user can start an instant of the Python back-end and manually adding more server connections to split user's the workload.\par
-\subsection{User Input}
-The GUI accepts protein sequences in FASTA format either in raw text or a text file. The user can perform in-silico trypsin digestion of the input with optional ability to manually or automatically select sites for misdigestion. 
+
+\section{User Input}
+The GUI accepts protein sequences in FASTA format either in raw text or a text file. The user can perform in-silico trypsin digestion of the input with optional ability to manually or automatically select sites for misdigestion.
 
 \end{document}
