@@ -1,0 +1,39 @@
+\documentclass[..\manual.tex]{subfiles}
+
+\begin{document}
+The GUI at its core is a chromium web instant. At the top right is a button that can be used to access the back-end connection management windows where the user can start an instant of the Python back-end and manually adding more server connections to split user's the workload.\par
+
+\section{User Input}
+The GUI accepts protein sequences in FASTA format either in raw text or a text file. The user can perform in-silico trypsin digestion of the input with optional ability to manually or automatically select sites for misdigestion.
+
+\subsection{Modification Customization}
+Within user settings tab, the user can use their own table of modifications as modifications source for the program. The table is made up of 10 columns where,
+\begin{itemize}
+    \item \textbf{name} is the name of the modification to be displayed on the GUI.
+    \item \textbf{label} is the internal label of the modification to be used by the back-end. Must be in lowercase. No modifications within the same query should have the same label beside transition of the same Ytype variable modification.
+    \item \textbf{mass} is the mass of the modification.
+    \item \textbf{regex} is the regular expression representation of the the modification.
+    \item \textbf{type} is the modification type \emph{Ytype}, \emph{variable}, or \emph{static}.
+    \item \textbf{Ytype} is the label of the Ytype transition.
+    \item \textbf{multiplepattern} is whether the query with this variable modification is default to have all modification pattern generated.
+    \item \textbf{status} is whether the query with this variable modification is default to be filled in every instance on the sequence.
+\end{itemize}
+\begin{table}
+	\caption{Example of a user submitted modifications table}
+	\begin{adjustbox}{width=1\textwidth}
+		\small
+		\begin{tabular}{c c c c c c c c c c}
+			\hline name & label & mass & regex & type & Ytype & multiplepattern & status & mlabel & offset \\ [0.1ex]
+			\hline\hline
+			O-Mannose & g & 0 & [S$|$T] & Ytype & Y0 & false & false & & 0 \\
+			O-Mannose & g & 162.05 & [S$|$T] & Ytype &  Y1 & false & false & & 0 \\
+			HexNAc & h & 0 & N[\^{}P][S$|$T] & Ytype &  Y0 & false & false & & 2 \\
+			Propionamide & c & 71.037114 & C & static &  & false & false & PPa & 0 \\
+			Carboxylation & e & 43.98983 & E & variable &  & false & false &  & 0 \\
+		\end{tabular}
+	\end{adjustbox}
+\end{table}
+
+\subsection{SWATH Window Customization}
+
+\end{document}

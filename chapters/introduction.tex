@@ -1,0 +1,38 @@
+\documentclass[../manual.tex]{subfiles}
+\begin{document}
+SWATHLib is an attempt at creating an automated workflow for creation of manually curated spectral library for SWATH downstream analysis. The program itself is composed of two main component, the front-end created using TypeScript with Electron and the Angular framework and the back-end created using Python with Tornado as the server implementation.
+\section{General Automated Workflow Summary}
+\begin{enumerate}
+	\item Input of user sequences and select parameters within the GUI (e.g SWATH windows, retention time (RT), modifications, result output format...).
+	\item Submission of user's queries to SWATHLib back-end.
+	\item Check whether there are any modifications and change the workflow settings accordingly.
+	\item The program attempt to generate possible combination of all the modifications from user query.
+	\item For each combination, transition sequences of \emph{Y}  and/or \emph{b} and/or \emph{y}-series would be created and their m/z values calculated.
+	\item Transition with m/z within \textbf{50-1800 m/z} range would be recorded for each combination of RT and window.
+	\item If oxonium ions were included within the queries, for each unique combination of precursor, RT and window, entries for oxonium ions would be recorded for them that combination.
+	\item The end results would be communicated to the user for retrieval.
+\end{enumerate}
+\section{GUI System Requirement}
+\subsection{Windows}
+
+\begin{itemize}
+	\item Windows 7 or later
+	\item Intel Pentium 4 processor or later with SSE2
+	\item 512 MB of RAM
+\end{itemize}
+\subsection{Mac}
+\begin{itemize}
+	\item OS X 10.9 and later
+	\item 64-bit Intel processor
+	\item 512 MB of RAM
+\end{itemize}
+\subsection{Linux}
+\begin{itemize}
+	\item Debian 8, Fedora 21, Ubuntu 12.04 and later
+	\item Intel Pentium 4 processor or later with SSE2
+\end{itemize}
+\section{Back-end System Requirement}
+\begin{itemize}
+	\item Any system that can support Python 3.5+ with Tornado v5+ and Pyteomics v3.5.1+ packages.
+\end{itemize}
+\end{document}
