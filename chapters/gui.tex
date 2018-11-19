@@ -2,13 +2,30 @@
 
 
 \begin{document}
-The GUI at its core is a chromium web instant. At the top right is a button that can be used to access the back-end connection management windows where the user can start an instant of the Python back-end and manually adding more server connections to split user's the workload.\par
+The GUI at its core is a chromium web instant that load a single JavaScript page application. The GUI is only necessary to communicate user input and retrieve result from back-end. It is not needed if the user only want to run the back-end.\par
+
+\section{Back-end Connection}
+At the top right is a button that can be used to access the back-end connection management windows where the user can start an instant of the Python back-end and manually adding more server connections to split user's the workload.\par
+
+\begin{figure}[h]
+	\centering
+	\begin{framed}
+		\centering
+		\includegraphics{connector-button}
+		\caption{Button for access to the back-end connector management panel.}\label{fig:connectorbutton}
+	\end{framed}
+\end{figure}
+
+The connector management panel has two sections. The first section is for running an instance of the back-end on the current computer. The input requires the absolute file path to the python binary that have access to Tornado v5+ and Pyteomics v3.5.1+, and the port number that the program would be run on.\par
+
+In the second section of the panel, the user can enter addresses to one or more SWATHlib back-end instance. The GUI would check every saved addresses for accessibility by performing a GET request to the address at the path \emph{/api/swathlib/upload/} . If the response status is 200, the address is accessible else, it would be inaccessible and would not be used in the workflow.\par 
 
 \section{User Input}
-The GUI accepts protein sequences in FASTA format either in raw text or a text file. The user can perform in-silico trypsin digestion of the input with optional ability to manually or automatically select sites for misdigestion.
+The GUI accepts protein sequences in FASTA format either in raw text or a text file. The user can perform in-silico trypsin digestion of the input with optional ability to manually or automatically select sites for misdigestion.\par
 
 \subsection{Modification Customization}
 Within user settings tab, the user can use their own table of modifications in tabular text file format as modifications source for the program. The table is made up of 10 columns where,\par
+
 \begin{itemize}
 	\item \textbf{name} is the name of the modification to be displayed on the GUI.
 	\item \textbf{label} is the internal label of the modification to be used by the back-end. Must be in lowercase. No modifications within the same query should have the same label beside transition of the same Ytype variable modification.
@@ -60,4 +77,9 @@ Similar to modification customization, the same settings tab, the user can also 
 		699          & 725  \\
 	\end{tabular}
 \end{table}
+
+\subsection{Retention Time Customization}
+Within the user settings tab, a customized retention time list could be entered into the text box, each RT separated by a newline. Upon saving, the customized time would replace the default time within the GUI. Currently we only support time in integer.
+
+
 \end{document}
