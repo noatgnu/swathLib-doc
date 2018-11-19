@@ -1,5 +1,6 @@
 \documentclass[10pt,a4paper]{memoir}
 \usepackage[utf8]{inputenc}
+\usepackage{adjustbox}
 
 \title{%
 SWATHLib \\
@@ -55,6 +56,25 @@ The GUI at its core is a chromium web instant. At the top right is a button that
 \section{User Input}
 The GUI accepts protein sequences in FASTA format either in raw text or a text file. The user can perform in-silico trypsin digestion of the input with optional ability to manually or automatically select sites for misdigestion.
 
-
+\subsection{Modification Customization}
+Within user settings tab, the user can use their own table of modifications as modifications source for the program.
+\begin{table}
+	
+	\centering
+	\caption{Example of a user submitted modifications table}
+	\begin{adjustbox}{width=1\textwidth}
+		\small
+		\begin{tabular}{c c c c c c c c c c c}
+			\hline name & label & mass & regex & type & auto\_allocation & Ytype & multiplepattern & status & mlabel & offset \\ [0.1ex]
+			\hline\hline
+			O-Mannose & g & 0 & [S$|$T] & Ytype & FALSE & Y0 & false & false & & 0 \\
+			O-Mannose & g & 162.05 & [S$|$T] & Ytype & FALSE & Y1 & false & false & & 0 \\
+			HexNAc & h & 0 & N[\^{}P][S$|$T] & Ytype & FALSE & Y0 & false & false & & 2 \\
+			Propionamide & c & 71.037114 & C & static & FALSE &  & false & false & PPa & 0 \\
+			Carboxylation & e & 43.98983 & E & variable & FALSE &  & false & false &  & 0 \\
+		\end{tabular}
+	\end{adjustbox}
+	
+\end{table}
 
 \end{document}
