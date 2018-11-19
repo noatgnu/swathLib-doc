@@ -10,28 +10,29 @@ The GUI accepts protein sequences in FASTA format either in raw text or a text f
 \subsection{Modification Customization}
 Within user settings tab, the user can use their own table of modifications in tabular text file format as modifications source for the program. The table is made up of 10 columns where,\par
 \begin{itemize}
-    \item \textbf{name} is the name of the modification to be displayed on the GUI.
-    \item \textbf{label} is the internal label of the modification to be used by the back-end. Must be in lowercase. No modifications within the same query should have the same label beside transition of the same Ytype variable modification.
-    \item \textbf{mass} is the mass of the modification.
-    \item \textbf{regex} is the regular expression representation of the the modification.
-    \item \textbf{type} is the modification type \emph{Ytype}, \emph{variable}, or \emph{static}.
-    \item \textbf{Ytype} is the label of the Ytype transition. Only applicable if type is Ytype.
-    \item \textbf{multiplepattern} is whether the query with this variable modification is default to have all modification pattern generated. Only applicable if type is Ytype or variable.
-    \item \textbf{status} is whether the query with this variable modification is default to be filled in every instance on the sequence. Only applicable if type is Ytype or variable.
-    \item \textbf{offset} is the value offset for motif finding in case the digested fragments are cut within the motif. Only applicable with the GUI tryptic digestion tool.
+	\item \textbf{name} is the name of the modification to be displayed on the GUI.
+	\item \textbf{label} is the internal label of the modification to be used by the back-end. Must be in lowercase. No modifications within the same query should have the same label beside transition of the same Ytype variable modification.
+	\item \textbf{mass} is the mass of the modification.
+	\item \textbf{regex} is the regular expression representation of the the modification.
+	\item \textbf{type} is the modification type \emph{Ytype}, \emph{variable}, or \emph{static}.
+	\item \textbf{Ytype} is the label of the Ytype transition. Only applicable if type is Ytype.
+	\item \textbf{multiplepattern} is whether the query with this variable modification is default to have all modification pattern generated. Only applicable if type is Ytype or variable.
+	\item \textbf{status} is whether the query with this variable modification is default to be filled in every instance on the sequence. Only applicable if type is Ytype or variable.
+	\item \textbf{mlabel} is the label for static modification in the annotated sequence.
+	\item \textbf{offset} is the value offset for motif finding in case the digested fragments are cut within the motif. Only applicable with the GUI tryptic digestion tool.
 \end{itemize}
 \begin{table}[h]
 	\caption{Example of a user submitted modifications table}
 	\begin{adjustbox}{width=1\textwidth}
 		\small
 		\begin{tabular}{c c c c c c c c c c}
-			\hline name & label & mass & regex & type & Ytype & multiplepattern & status & mlabel & offset \\ [0.1ex]
+			\hline name   & label & mass      & regex           & type     & Ytype & multiplepattern & status & mlabel & offset \\ [0.1ex]
 			\hline\hline
-			O-Mannose & g & 0 & [S$|$T] & Ytype & Y0 & false & false & & 0 \\
-			O-Mannose & g & 162.05 & [S$|$T] & Ytype &  Y1 & false & false & & 0 \\
-			HexNAc & h & 0 & N[\^{}P][S$|$T] & Ytype &  Y0 & false & false & & 2 \\
-			Propionamide & c & 71.037114 & C & static &  & false & false & PPa & 0 \\
-			Carboxylation & e & 43.98983 & E & variable &  & false & false &  & 0 \\
+			O-Mannose     & g     & 0         & [S$|$T]         & Ytype    & Y0    & false           & false  &        & 0      \\
+			O-Mannose     & g     & 162.05    & [S$|$T]         & Ytype    & Y1    & false           & false  &        & 0      \\
+			HexNAc        & h     & 0         & N[\^{}P][S$|$T] & Ytype    & Y0    & false           & false  &        & 2      \\
+			Propionamide  & c     & 71.037114 & C               & static   &       & false           & false  & PPa    & 0      \\
+			Carboxylation & e     & 43.98983  & E               & variable &       & false           & false  &        & 0      \\
 		\end{tabular}
 	\end{adjustbox}
 \end{table}
@@ -44,19 +45,19 @@ Similar to modification customization, the same settings tab, the user can also 
 	\begin{tabular}{c c}
 		\hline start & stop \\
 		\hline\hline
-		400 & 425 \\
-		424 & 450 \\
-		449	& 475 \\
-		474 & 500 \\
-		499 & 525 \\
-		524 & 550 \\
-		549 & 575 \\
-		574 & 600 \\
-		599 & 625 \\
-		624 & 650 \\
-		649 & 675 \\
-		674 & 700 \\
-		699 & 725 \\
+		400          & 425  \\
+		424          & 450  \\
+		449          & 475  \\
+		474          & 500  \\
+		499          & 525  \\
+		524          & 550  \\
+		549          & 575  \\
+		574          & 600  \\
+		599          & 625  \\
+		624          & 650  \\
+		649          & 675  \\
+		674          & 700  \\
+		699          & 725  \\
 	\end{tabular}
-\end{table} 
+\end{table}
 \end{document}
