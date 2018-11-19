@@ -1,4 +1,5 @@
-\documentclass[..\manual.tex]{subfiles}
+\documentclass[../manual.tex]{subfiles}
+
 
 \begin{document}
 The GUI at its core is a chromium web instant. At the top right is a button that can be used to access the back-end connection management windows where the user can start an instant of the Python back-end and manually adding more server connections to split user's the workload.\par
@@ -7,18 +8,19 @@ The GUI at its core is a chromium web instant. At the top right is a button that
 The GUI accepts protein sequences in FASTA format either in raw text or a text file. The user can perform in-silico trypsin digestion of the input with optional ability to manually or automatically select sites for misdigestion.
 
 \subsection{Modification Customization}
-Within user settings tab, the user can use their own table of modifications as modifications source for the program. The table is made up of 10 columns where,
+Within user settings tab, the user can use their own table of modifications in tabular text file format as modifications source for the program. The table is made up of 10 columns where,\par
 \begin{itemize}
     \item \textbf{name} is the name of the modification to be displayed on the GUI.
     \item \textbf{label} is the internal label of the modification to be used by the back-end. Must be in lowercase. No modifications within the same query should have the same label beside transition of the same Ytype variable modification.
     \item \textbf{mass} is the mass of the modification.
     \item \textbf{regex} is the regular expression representation of the the modification.
     \item \textbf{type} is the modification type \emph{Ytype}, \emph{variable}, or \emph{static}.
-    \item \textbf{Ytype} is the label of the Ytype transition.
-    \item \textbf{multiplepattern} is whether the query with this variable modification is default to have all modification pattern generated.
-    \item \textbf{status} is whether the query with this variable modification is default to be filled in every instance on the sequence.
+    \item \textbf{Ytype} is the label of the Ytype transition. Only applicable if type is Ytype.
+    \item \textbf{multiplepattern} is whether the query with this variable modification is default to have all modification pattern generated. Only applicable if type is Ytype or variable.
+    \item \textbf{status} is whether the query with this variable modification is default to be filled in every instance on the sequence. Only applicable if type is Ytype or variable.
+    \item \textbf{offset} is the value offset for motif finding in case the digested fragments are cut within the motif. Only applicable with the GUI tryptic digestion tool.
 \end{itemize}
-\begin{table}
+\begin{table}[h]
 	\caption{Example of a user submitted modifications table}
 	\begin{adjustbox}{width=1\textwidth}
 		\small
@@ -35,5 +37,26 @@ Within user settings tab, the user can use their own table of modifications as m
 \end{table}
 
 \subsection{SWATH Window Customization}
-
+Similar to modification customization, the same settings tab, the user can also replace the default SWATH windows with an array of customized range using a tabular text file with two column, the first is the starting m/z of the windows while the second column is the stopping m/z of the windows.
+\begin{table}[h]
+	\caption{Example of a user submitted SWATH window table}
+	\centering
+	\begin{tabular}{c c}
+		\hline start & stop \\
+		\hline\hline
+		400 & 425 \\
+		424 & 450 \\
+		449	& 475 \\
+		474 & 500 \\
+		499 & 525 \\
+		524 & 550 \\
+		549 & 575 \\
+		574 & 600 \\
+		599 & 625 \\
+		624 & 650 \\
+		649 & 675 \\
+		674 & 700 \\
+		699 & 725 \\
+	\end{tabular}
+\end{table} 
 \end{document}
