@@ -81,5 +81,52 @@ Similar to modification customization, the same settings tab, the user can also 
 \subsection{Retention Time Customization}
 Within the user settings tab, a customized retention time list could be entered into the text box, each RT separated by a newline. Upon saving, the customized time would replace the default time within the GUI. Currently we only support time in integer.
 
+\subsection{Main Input Settings}
+Main input settings composed of 10 input parameters.\par
 
+\begin{itemize}
+	\item \textbf{Static Modifications}, modifications that will always be on the precursor sequences.
+	\item \textbf{Non Ytype Variable Modifications}, variable modification that is not Ytype and may or may not appear on its supposed modification sites on the precursor sequences.
+	\item \textbf{Ytype Variable Modifications}, variable modification that is Ytype and may and may or may not appear on its supposed modification sites on the precursor sequences. Multiple Ytype transition of the same modification can be applied without raising modification conflict issues.
+	\item \textbf{Retention Time}, retention time for the library to be generated at.
+	\item \textbf{SWATH Windows}, SWATH windows for the library to be generated at.
+	\item \textbf{Max Charge}, max transition charge for the library to be generated at.
+	\item \textbf{Precursor Charge}, charge of the precursor, only used in calculation of precursor m/z if no SWATH windows were selected.
+	\item \textbf{Oxonium Ions}, ion fragments of a Ytype modification.
+	\item \textbf{Fragmentation ion-type}, can be a string combination of \emph{b}, \emph{y}, and \emph{Y}, dictate which transition series that the library would attempt to generate.
+	\item \textbf{Output Sequence Format At Variable Modifications}, dictate how the precursor annotated sequences would be uniquely identified across different RT and SWATH windows combination from each other at positions of variable modifications or at the end of the sequence. The three option is RT or SWATH windows or RT and SWATH windows.
+\end{itemize}
+
+These settings would apply to all sequences selected by the user at the beginning upon clicking the \emph{Apply Modifications} button and replaced any settings set before.\par
+
+\subsection{Individual Query Settings}
+Beside the main settings, the user can also customize a few parameters for each individual query sequence.\par
+
+\begin{figure}[h]
+	\centering
+	
+	\begin{framed}
+		\centering
+		\begin{adjustbox}{width=1\textwidth}
+			\includegraphics{individual-query}
+		\end{adjustbox}
+		\caption{Example of individual query.}\label{fig:individualquery}
+	\end{framed}
+	
+\end{figure}
+
+Each individual query panel is a graphical representation of the supplied sequence with modification from main settings applied to them. A context menu can be activate upon right clicking on each amino acid within the sequence with the following options\par
+\begin{itemize}
+	\item \textbf{Edit Residue}, allow direct customization with adding and removal of any modifications to the selected residue.
+	\item \textbf{b-series Stop}, set this residue and all after it to not being generated for \emph{b} transition
+	\item \textbf{Selected for b-series}, select this residue for b-series generation.
+	\item \textbf{y-series Stop}, set this residue and all before it to not being generated for \emph{y} transition
+	\item \textbf{Selected for y-series}, select this residue for y-series generation.
+\end{itemize}
+
+For variable modifications, the users can also select whether or not that they want the modifications to be either fill all sites or none (for non Ytype variable modifications) by checking the \textbf{Filled all positions} box. The box after that was for all possible modifications settings. If enable, it would generate all possible combination of this modifications across different identified modification sites. Depending on the complexity of the modifications and the length of the protein, if the \emph{b} and \emph{y} library can become quite large and it would also take a large amount of time to create.\par
+
+The checkbox \textbf{b,y-run non-Ytype mods only} would disable Ytype modification mass from calculation of ion m/z for \emph{b} and \emph{y} transitions for this query.\par
+
+If \textbf{Generate only for oxonium ion} is checked, only oxonium ions would be included for each unique precursor at each unique RT and SWATH window combinations.\par
 \end{document}
