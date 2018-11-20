@@ -1,4 +1,13 @@
 \documentclass[../manual.tex]{subfiles}
 \begin{document}
-The Back-end was built on the single threaded Python asynchronous web framework Tornado.
+The Back-end was built on the single threaded Python asynchronous web framework Tornado exposed at \emph{/api/swathlib/upload/} . The exposed end point has two HTTP methods enabled, GET for checking accessibility and, OPTIONS and PUT for accepting user submission. Default setting allowed connection from all origins with the following headers \emph{Origin, X-Requested-With, Content-Type, Accept}.
+
+\section{User Query Preprocessing}
+Upon receiving the query, SWATHLib would attempt to resolve any possible conflict of variable modifications by recursively generate all combination of them at the conflicted positions. If different Ytype transitions are included, only one Ytype transition can exist at the same time. For each combination of modifications, two modifications dictionaries would be generated, one for all static modifications in the combination, the other for all variable modifications in the combination.\par
+
+Using the dictionaries containing information modifications' positions, the program, in case of multiple modification pattern, would attempt to again recursively iterate through all combination of positions with and without presence of the modifications to generate unique multiple variable modifications modification pattern.  
+
+\section{Theoretical Ion Generation}
+
+
 \end{document}

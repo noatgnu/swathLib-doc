@@ -18,7 +18,7 @@ At the top right is a button that can be used to access the back-end connection 
 
 The connector management panel has two sections. The first section is for running an instance of the back-end on the current computer. The input requires the absolute file path to the python binary that have access to Tornado v5+ and Pyteomics v3.5.1+, and the port number that the program would be run on.\par
 
-In the second section of the panel, the user can enter addresses to one or more SWATHlib back-end instance. The GUI would check every saved addresses for accessibility by performing a GET request to the address at the path \emph{/api/swathlib/upload/} . If the response status is 200, the address is accessible else, it would be inaccessible and would not be used in the workflow.\par 
+In the second section of the panel, the user can enter addresses to one or more SWATHLib back-end instance. The GUI would check every saved addresses for accessibility by performing a GET request to the address at the path \emph{/api/swathlib/upload/} . If the response status is 200, the address is accessible else, it would be inaccessible and would not be used in the workflow.\par 
 
 \section{User Input}
 The GUI accepts protein sequences in FASTA format either in raw text or a text file. The user can perform in-silico trypsin digestion of the input with optional ability to manually or automatically select sites for misdigestion.\par
@@ -129,4 +129,8 @@ For variable modifications, the users can also select whether or not that they w
 The checkbox \textbf{b,y-run non-Ytype mods only} would disable Ytype modification mass from calculation of ion m/z for \emph{b} and \emph{y} transitions for this query.\par
 
 If \textbf{Generate only for oxonium ion} is checked, only oxonium ions would be included for each unique precursor at each unique RT and SWATH window combinations.\par
+
+\subsection{Queries Submission}
+After application of all desired parameters, the user can submit the result by clicking the \textbf{Submit} button at the bottom right of the GUI. Upon triggering, each individual query would be submitted separately to the back-end and a progress bar would also appear under each query. If multiple back-end connections are available, the GUI would spread the query out to different accessible connection to ensure a balanced workload.
+
 \end{document}
