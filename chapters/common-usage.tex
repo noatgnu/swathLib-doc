@@ -13,7 +13,7 @@ Here we have a precursor sequence with the id \textbf{test\_sequence} and the aa
 
 Upon input into the fasta content box and process, display similar to Figure \ref{fig:testsequenceylibrary} should appear.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\begin{framed}
         \centering
@@ -29,7 +29,7 @@ This sequence has an N-glycosylation sequon at position 4 and a tryptic digestio
 
 
 After in-silico digestion with trypsin, we would obtain two sequences (Figure \ref{fig:testsequenceylibrarydigested}), one before and one after the digestion site. The name of the sequences have also been automatically modified to show the starting and stopping positions of each digested fragment. Using the filter rule for N-glycosylation sequon, the GUI would identify and select all sequences with a sequon within those already selected.
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\begin{framed}
         \centering
@@ -40,7 +40,7 @@ After in-silico digestion with trypsin, we would obtain two sequences (Figure \r
 	\end{framed}
 \end{figure}
 
-We currently have a tryptic digested sequence containing N-glycosylation sequon but without any modification and experiment settings applied to it. These settings can be selected within the \textbf{Queryset Input Settings} panel.\par
+We currently have a tryptic digested sequence containing N-glycosylation sequon but without any modification and experiment settings applied to it. These settings can be selected within the \textbf{Queryset Input Settings} panel.
 
 In Figure \ref{fig:testsequenceylibrarysettings}, we have the following settings selected,
 \begin{itemize}
@@ -50,7 +50,7 @@ In Figure \ref{fig:testsequenceylibrarysettings}, we have the following settings
 	\item Y fragmentation ion-type
 	\item Output sequence format include RT and SWATH window values at variable modification sites.
 \end{itemize}
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\begin{framed}
         \centering
@@ -60,8 +60,8 @@ In Figure \ref{fig:testsequenceylibrarysettings}, we have the following settings
 		\caption{Example modification settings for N-glycosylation library with 3 HexNAc Ytype transitions at RT 10 and across all default SWATH windows.}\label{fig:testsequenceylibrarysettings}
 	\end{framed}
 \end{figure}
-After application of modification settings, the result would be display in Figure \ref{fig:testsequenceylibraryindividual}.
-\begin{figure}[h]
+After application of modification settings, the result would be display in Figure \ref{fig:testsequenceylibraryindividual}. Multiple HexNAc transitions are placed at N4 and the residue is colored green.
+\begin{figure}[H]
 	\centering
 	\begin{framed}
         \centering
@@ -71,4 +71,5 @@ After application of modification settings, the result would be display in Figur
 		\caption{Example of a sequence with the settings above applied.}\label{fig:testsequenceylibraryindividual}
 	\end{framed}
 \end{figure}
+
 \end{document}
