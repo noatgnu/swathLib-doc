@@ -42,7 +42,14 @@ After in-silico digestion with trypsin, we would obtain two sequences (Figure \r
 
 We currently have a tryptic digested sequence containing N-glycosylation sequon but without any modification and experiment settings applied to it. These settings can be selected within the \textbf{Queryset Input Settings} panel.\par
 
-
+In Figure \ref{fig:testsequenceylibrarysettings}, we have the following settings selected,
+\begin{itemize}
+	\item HexNAc Y0, Y1, and Y2 modifications.
+	\item Retention time at 10.
+	\item All SWATH windows.
+	\item Y fragmentation ion-type
+	\item Output sequence format include RT and SWATH window values at variable modification sites.
+\end{itemize}
 \begin{figure}[h]
 	\centering
 	\begin{framed}
@@ -53,5 +60,15 @@ We currently have a tryptic digested sequence containing N-glycosylation sequon 
 		\caption{Example modification settings for N-glycosylation library with 3 HexNAc Ytype transitions at RT 10 and across all default SWATH windows.}\label{fig:testsequenceylibrarysettings}
 	\end{framed}
 \end{figure}
-
+After application of modification settings, the result would be display in Figure \ref{fig:testsequenceylibraryindividual}.
+\begin{figure}[h]
+	\centering
+	\begin{framed}
+        \centering
+        \begin{adjustbox}{width=1\textwidth}
+			\includegraphics{test-sequence-ylibrary-individual}
+		\end{adjustbox}
+		\caption{Example of a sequence with the settings above applied.}\label{fig:testsequenceylibraryindividual}
+	\end{framed}
+\end{figure}
 \end{document}
