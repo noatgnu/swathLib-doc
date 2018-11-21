@@ -4,7 +4,7 @@
 \begin{document}
 Within this section, we will provide some common usage examples of SWATHLib.
 
-\section{Creating A Y-library for N-glycosylated peptide}
+\section{Creating a library containing Y-ion for N-glycosylated peptide}
 Here we have a precursor sequence with the id \textbf{test\_sequence} and the aa sequence \textbf{TTENDTFWKEF}, or in fasta format \par
 \begin{verbatim}
 	>test_sequence
@@ -73,4 +73,7 @@ After application of modification settings, the result would be similar to Figur
 \end{figure}
 
 On submission, the progress bar would start. When a query is finished, the bar under it would turn green. The moment all queries result have finished and been collected, a \textbf{Save Compiled Results} button would appear under the \textbf{Submit Queries} button. The user can click on the button to save the library in .txt tabulated file format.
+
+\subsection{Creating a byY-library}
+For a library with both \emph{by} and \emph{Y} transitions, the user might want to avoid overlapping of the transition m/z, especially \emph{y} and \emph{Y} transitions. The \textbf{b,y-run non-Ytype mods only} option can be enabled for the query. This option would disable Ytype modification mass within calculation of transition m/z for \emph{by}-series.
 \end{document}
