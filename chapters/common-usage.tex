@@ -77,8 +77,8 @@ On submission, the progress bar would start. When a query is finished, the bar u
 \subsection{Creating a byY-library}
 For a library with both \emph{by} and \emph{Y} transitions, the user might want to avoid overlapping of the transition m/z, especially \emph{y} and \emph{Y} transitions. The \textbf{b,y-run non-Ytype mods only} option can be enabled for the query. This option would disable Ytype modification mass within calculation of transition m/z for \emph{by}-series.
 
-\section{Adding oxonium ions to your library}
-Oxonium ions are fragmentation of the modification block during ionization process. In MS, the presence of oxonium ions fragment within the spectral graph of a peptide fragment could provide additional evidence for the peptide to be glycosylation and potential knowledge on the glycan composition. With SWATHLib, using the query settings interface, you can add these oxonium ions to your library of interests to look for potential glycosylation evidence.\par
+\section{Oxonium library}
+In MS data of glycosylated peptides, Oxonium ions are fragmentation of the modification block during ionization process. The presence of oxonium ions fragment within the spectral graph of a peptide fragment could provide additional evidence for the peptide to be glycosylation and potential knowledge on the glycan composition. With SWATHLib, using the query settings interface, you can add these oxonium ions to your library of interests to look for potential glycosylation evidence.\par
 
 Let start again with the example sequence from the section above.\par
 \begin{verbatim}
@@ -95,7 +95,25 @@ Following similar input procedure as of Figure \ref{fig:testsequenceylibrarysett
         \begin{adjustbox}{width=1\textwidth}
 			\includegraphics{test-sequence-yoxoniumlibrary-settings}
 		\end{adjustbox}
-		\caption{Example of a sequence with the settings above applied.}\label{fig:testsequenceyoxoniumlibrarysettings}
+		\caption{Example of a sequence with the oxonium ions selected. By selecting these settings, every single modified variation of the peptide at each selected window and retention time would also be accompanied by entries of selected oxonium ions.}\label{fig:testsequenceyoxoniumlibrarysettings}
 	\end{framed}
 \end{figure}
+
+These settings together with the query can now be submitted for process to produce a library with Y-ion together with those selected oxonium ions.\par
+
+\subsection{Oxoniome library}
+An oxoniome library is one that containing only oxonium ions. It can be used to quickly gain an overview of glycosylation within complex samples. SWATHLib can be used to create an oxoniome library from peptide of interests. 
+
+\begin{figure}[H]
+	\centering
+	\begin{framed}
+        \centering
+        \begin{adjustbox}{width=1\textwidth}
+			\includegraphics{test-sequence-yoxoniumlibrary-individual}
+		\end{adjustbox}
+		\caption{Example of a sequence with the oxonium ions selected and is set for only oxonium generation.}\label{fig:testsequenceyoxoniumlibraryindividual}
+	\end{framed}
+\end{figure}
+
+In Figure \ref{fig:testsequenceyoxoniumlibraryindividual}, the option \textbf{Generate only for oxonium ion} was checked to instruct the back-end only generating oxonium ions entry for each modification pattern without calculating any \emph{Y} or \emph{by}-transitions. Currently this setting is only available on an individual sequence basic. The sequence and all modifications input would only be used to identify different modification pattern of the input peptides.
 \end{document}
