@@ -8,6 +8,8 @@ Upon receiving the query, SWATHLib would attempt to resolve any possible conflic
 Using the dictionaries containing information modifications' positions, the program, in case of multiple modification pattern, would attempt to again recursively iterate through all combination of positions with and without presence of the modifications to generate unique multiple variable modifications modification pattern.  
 
 \section{Theoretical Ion Generation}
-If \emph{Y} is in the query ion-type parameter, \emph{Y} transitions would be generated first.
+If there are multiple positions of variable modifications available, using a combination of Python built-in package \emph{itertools}'s functions \emph{permutations} and \emph{combinations}, we could generate a records of all possible states for each modification on the user input. Using a tree data structure, we iterate through all possible combinations of these different modification states.\par
+
+On every yield, we would perform calculation of \emph{Y} transitions first if available, then \emph{by}. If the user had not selected any specific \emph{b} or \emph{y}, all transitions for them would be calculated, respectively. 
 
 \end{document}

@@ -76,4 +76,26 @@ On submission, the progress bar would start. When a query is finished, the bar u
 
 \subsection{Creating a byY-library}
 For a library with both \emph{by} and \emph{Y} transitions, the user might want to avoid overlapping of the transition m/z, especially \emph{y} and \emph{Y} transitions. The \textbf{b,y-run non-Ytype mods only} option can be enabled for the query. This option would disable Ytype modification mass within calculation of transition m/z for \emph{by}-series.
+
+\section{Adding oxonium ions to your library}
+Oxonium ions are fragmentation of the modification block during ionization process. In MS, the presence of oxonium ions fragment within the spectral graph of a peptide fragment could provide additional evidence for the peptide to be glycosylation and potential knowledge on the glycan composition. With SWATHLib, using the query settings interface, you can add these oxonium ions to your library of interests to look for potential glycosylation evidence.\par
+
+Let start again with the example sequence from the section above.\par
+\begin{verbatim}
+	>test_sequence
+	TTENDTFWKEF
+\end{verbatim}
+
+Following similar input procedure as of Figure \ref{fig:testsequenceylibrarysettings} we would obtain the digested peptide containing at least one N-glycosylation sequon. However, different to what depicted previously, our settings would now include the oxonium ions Hex, HexNAc, and HexHexNAc.\par
+
+\begin{figure}[H]
+	\centering
+	\begin{framed}
+        \centering
+        \begin{adjustbox}{width=1\textwidth}
+			\includegraphics{test-sequence-yoxoniumlibrary-settings}
+		\end{adjustbox}
+		\caption{Example of a sequence with the settings above applied.}\label{fig:testsequenceyoxoniumlibrarysettings}
+	\end{framed}
+\end{figure}
 \end{document}
