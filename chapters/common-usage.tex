@@ -5,7 +5,7 @@
 Within this section, we will provide some common usage examples of SWATHLib.
 
 \section{Creating a library containing Y-ion for N-glycosylated peptide}
-Here we have a precursor sequence with the id \textbf{test\_sequence} and the aa sequence \textbf{TTENDTFWKEF}, or in fasta format \par
+It has been known that \emph{Y}-ion based library can be used for analysis of glycopeptide without prior glycan knowledge.\cite{RN474} Here we have a precursor sequence with the id \textbf{test\_sequence} and the aa sequence \textbf{TTENDTFWKEF}, or in fasta format \par
 \begin{verbatim}
 	>test_sequence
 	TTENDTFWKEF
@@ -77,7 +77,7 @@ On submission, the progress bar would start. When a query is finished, the bar u
 \subsection{Creating a byY-library}
 For a library with both \emph{by} and \emph{Y} transitions, the user might want to avoid overlapping of the transition m/z, especially \emph{y} and \emph{Y} transitions. The \textbf{b,y-run non-Ytype mods only} option can be enabled for the query. This option would disable Ytype modification mass within calculation of transition m/z for \emph{by}-series.
 
-\section{Adding oxonium ions to your Y-library}
+\section{Adding oxonium ions to Y-library}
 In MS data of glycosylated peptides, Oxonium ions are fragmentation of the modification block during ionization process. The presence of oxonium ions fragment within the spectral graph of a peptide fragment could provide additional evidence for the peptide to be glycosylation and potential knowledge on the glycan composition. With SWATHLib, using the query settings interface, you can add these oxonium ions to your library of interests to look for potential glycosylation evidence.\par
 
 Let start again with the example sequence from the section above.\par
