@@ -10,6 +10,15 @@ Using the dictionaries containing information modifications' positions, the prog
 \section{Theoretical Ion Generation}
 If there are multiple positions of variable modifications available, using a combination of Python built-in package \emph{itertools}'s functions \emph{permutations} and \emph{combinations}, we could generate a records of all possible states for each modification on the user input. Using a tree data structure, we iterate through all possible combinations of these different modification states.\par
 
-On every yield, we would perform calculation of \emph{Y} transitions first if available, then \emph{by}. If the user had not selected any specific \emph{b} or \emph{y}, all transitions for them would be calculated, respectively. 
+On every yield, we would perform calculation of \emph{Y} transitions first if available, then \emph{by}. If the user had not selected any specific \emph{b} or \emph{y}, all transitions for them would be calculated, respectively.
 
+\section{Standalone Back-end}
+While doing the heavy lifting of the ion generations, the back-end is the lightest part of the suite and can be run without the GUI interface. It composed of a single python file located within the program folder on Windows at resources/backend/main.web.py.\par
+
+The python script accepts the following command-line parameters
+\begin{itemize}
+    \item \emph{-p}: default = 9000. Instruct the back-end to start listening at the port with this value.
+\end{itemize}
+
+Multiple instances of the script could be run at different ports to potentially take advantage of multiprocessing on modern computing platform for processing multiple query at the same time.
 \end{document}
